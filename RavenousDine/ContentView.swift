@@ -16,24 +16,9 @@ struct ContentView: View {
                 ForEach(menu) { section in
                     Section(section.name) {
                         ForEach(section.items) { item in
-                            HStack {
-                                Image(item.thumbnailImage)
-                                    .clipShape(Circle())
-                                    .overlay(.gray, in: Circle().stroke(lineWidth: 2.0))
-                                VStack(alignment: .leading,
-                                       spacing: 1.0) {
-                                    Text(item.name)
-                                        .bold()
-                                    Text("$\(item.price)")
-                                        
-                                }
-                                
-                            }
-                            
+                            ItemRow(item: item)
                         }
                     }
-                    
-                    
                 }
             }
             .navigationTitle("Menu")
