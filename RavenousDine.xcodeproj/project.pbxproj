@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD411F6A28FB013600A6C7C5 /* ItemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD411F6928FB013600A6C7C5 /* ItemDetail.swift */; };
 		FDCF611128F84A9C00C44DDC /* RavenousDineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCF611028F84A9C00C44DDC /* RavenousDineApp.swift */; };
 		FDCF611328F84A9C00C44DDC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCF611228F84A9C00C44DDC /* ContentView.swift */; };
 		FDCF611528F84A9C00C44DDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDCF611428F84A9C00C44DDC /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD411F6928FB013600A6C7C5 /* ItemDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetail.swift; sourceTree = "<group>"; };
 		FDCF610D28F84A9C00C44DDC /* RavenousDine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RavenousDine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDCF611028F84A9C00C44DDC /* RavenousDineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RavenousDineApp.swift; sourceTree = "<group>"; };
 		FDCF611228F84A9C00C44DDC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				FDCF611628F84A9C00C44DDC /* Preview Content */,
 				FDCF612828F859AE00C44DDC /* MenuUtils.swift */,
 				FDCF612C28F880AE00C44DDC /* ItemRow.swift */,
+				FD411F6928FB013600A6C7C5 /* ItemDetail.swift */,
 			);
 			path = RavenousDine;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				FDCF611128F84A9C00C44DDC /* RavenousDineApp.swift in Sources */,
 				FDCF612D28F880AE00C44DDC /* ItemRow.swift in Sources */,
 				FDCF612328F84B4000C44DDC /* Helper.swift in Sources */,
+				FD411F6A28FB013600A6C7C5 /* ItemDetail.swift in Sources */,
 				FDCF612928F859AE00C44DDC /* MenuUtils.swift in Sources */,
 				FDCF612528F84B4000C44DDC /* Menu.swift in Sources */,
 			);
