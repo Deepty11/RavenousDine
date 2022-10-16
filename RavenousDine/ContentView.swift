@@ -19,7 +19,6 @@ struct ContentView: View {
                             NavigationLink(destination: ItemDetail(item: item)) {
                                 ItemRow(item: item)
                             }
-                            
                         }
                     }
                 }
@@ -27,8 +26,6 @@ struct ContentView: View {
             .navigationTitle("Menu")
             
         }
-        
-        
         
     }
 }
