@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ItemDetail: View {
+    @EnvironmentObject var order: Order
     var item: MenuItem
     var body: some View {
         VStack {
@@ -19,7 +20,7 @@ struct ItemDetail: View {
                                         leading: 0,
                                         bottom: 0,
                                         trailing: 0))
-                Text("Photo: \(item.photoCredit)")
+                Text("Photo credit: \(item.photoCredit)")
                     .font(.caption)
                     .foregroundColor(.white)
                     .padding(4)
@@ -38,11 +39,12 @@ struct ItemDetail: View {
                                     bottom: 0,
                                     trailing: 5))
             
-            Text("Order This")
-                .foregroundColor(.blue)
-                .fontWeight(.medium)
-                .padding(10)
-                .font(.title3)
+            Button("Order This") {
+                order.add(item: item)
+            }
+            .fontWeight(.medium)
+            .padding(10)
+            .font(.title3)
             
             Spacer()
             
@@ -56,6 +58,7 @@ struct ItemDetail_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             ItemDetail(item: MenuItem.example)
+                .environmentObject(Order())
         }
     }
 }
