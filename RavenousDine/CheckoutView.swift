@@ -63,7 +63,7 @@ struct CheckoutView: View {
             }
             
             Section(header: Text("Total: \(totalWithTips)")
-                .font(.title)) {
+                .font(.largeTitle)) {
                     Button("Confirm Order") {
                         isAlertPresented.toggle() // set false if was set true earlier, and vice-versa
                     }

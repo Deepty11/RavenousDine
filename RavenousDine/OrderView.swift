@@ -17,7 +17,9 @@ struct OrderView: View {
                     ForEach(order.items) { item in
                         OrderedItemRow(item: item)
                     }
+                    .onDelete(perform: deleteItem)
                 }
+        
                 
                 Section {
                     NavigationLink(destination: {
@@ -27,11 +29,19 @@ struct OrderView: View {
                     }
                     
                 }
+                .disabled(order.items.isEmpty)
             }
             .navigationTitle("Order")
+            .toolbar {
+                EditButton()
+            }
             
         }
         
+    }
+    
+    func deleteItem(at offset: IndexSet) {
+        order.items.remove(atOffsets: offset)
     }
 }
 
