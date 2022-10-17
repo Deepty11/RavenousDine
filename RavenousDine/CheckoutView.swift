@@ -14,14 +14,19 @@ struct CheckoutView: View {
     @State private var addLoyaltyDetails = false
     @State private var loyaltyCardNumber = ""
     @State private var tipSelected = "10"
+    @State private var isAlertPresented = false
     
     private let paymentTypes = ["Cash",
                         "Credit Cards",
                         "RavenousDine Points"]
     private let tipAmounts = ["10", "15", "20", "0"]
     
-    private var totalWithTips: Float {
-        return Float(order.total) + Float(order.total * (Int(tipSelected) ?? 0)) / 100
+    private var totalWithTips: String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        
+        let val =  NSNumber(value: Float(order.total) + Float(order.total * (Int(tipSelected) ?? 0)) / 100)
+        return formatter.string(from: val) ?? "$0"
     }
     
     var body: some View {
@@ -53,20 +58,25 @@ struct CheckoutView: View {
                         Text("\($0)%")
                     }
                 }
-                .pickerStyle(SegmentedPickerStyle())
+                .pickerStyle(.segmented)
 
             }
             
-            Section(header: Text("Total: $\(totalWithTips.rounded())")
+            Section(header: Text("Total: \(totalWithTips)")
                 .font(.title)) {
                     Button("Confirm Order") {
-                        //
+                        isAlertPresented.toggle() // set false if was set true earlier, and vice-versa
                     }
 
             }
         }
         .navigationTitle("Payement")
         .navigationBarTitleDisplayMode(.inline)
+        .alert(isPresented: $isAlertPresented) {
+            Alert(title: Text("Order Confirmed"),
+            message: Text("Your total cost \(totalWithTips)"),
+                  dismissButton: .default(Text("Ok")))
+        }
         
     }
 }

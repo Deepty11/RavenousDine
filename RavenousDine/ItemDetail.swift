@@ -42,7 +42,7 @@ struct ItemDetail: View {
             Button("Order This") {
                 order.add(item: item)
             }
-            .fontWeight(.medium)
+            //.fontWeight(.medium)
             .padding(10)
             .font(.title3)
             
